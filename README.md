@@ -92,3 +92,44 @@ git push --mirror
 ```
 
 This is the safest and most complete way to migrate a repository with **100% history and all branches preserved**.
+
+
+
+
+
+### Option 1: Clone and push (recommended)
+
+If you want:
+
+* All commits
+* All branches
+* All tags
+
+then use:
+
+```bash
+git clone https://github.com/old-account/old-repo.git
+cd old-repo
+
+git remote remove origin
+git remote add origin https://github.com/new-account/new-repo.git
+
+git push --all origin
+git push --tags origin
+```
+
+**Result:**
+
+* ✅ Full history
+* ✅ All branches
+* ✅ All tags
+* ✅ No `refs/pull/*` issues
+
+---
+
+### If your concern is avoiding notifications to the old account
+
+Downloading a ZIP and creating a new repository is the cleanest approach because it has no connection to the old repository. However, you lose all Git history.
+
+If you want to preserve history while moving to a new repository, use **Option 2**. It does not notify the old repository owner simply because you pushed to a different repository.
+
