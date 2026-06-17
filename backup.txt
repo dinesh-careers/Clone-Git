@@ -1,0 +1,5 @@
+Github A account to B account migration 
+- git clone 
+- check all the branch "git branch -a "
+- add the remote branch for backup -> git remote add backup https://github.com/dinesh-careers/DhanGPT.git
+- load all ur branch in new repo -> git remote add backup https://github.com/dinesh-careers/DhanGPT.git
